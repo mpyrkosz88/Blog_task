@@ -1,0 +1,101 @@
+html{
+  font-size: 16px;
+  height: 100%;
+}
+body{
+  height: 100%;
+max-width: 1000px;
+margin: 0 auto;
+background: grey;
+}
+
+.row::after, .row::before {
+    content: "";
+    clear: both;
+    display: table;
+    border: 10px solid grey;
+}
+
+@media all and (min-width:800px){
+  @for $i from 1 to 4{
+    .col-#{$i}{
+      width: (100%/3) * $i;
+    }
+  }
+}
+
+@media all and (max-width:800px) and (min-width: 481px){
+  @for $i from 1 to 4{
+    .col-#{$i}{
+      width: 50%;
+    }
+  }
+}
+@media all and (max-width:480px){
+  @for $i from 1 to 4{
+    .col-#{$i}{
+      width: 100%;
+    }
+  }
+}
+
+[class*='col-']{
+  float: left;
+  box-sizing: border-box;
+  border: 10px solid grey;
+  min-height: 1px;
+  position: relative;
+  height: 400px;
+  background-color: white;
+}
+
+.col-1 img{
+  width: 100%;
+  height: 40%;
+}
+.col-2 img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.content{
+  position: absolute;
+  margin-top: 35%;
+}
+.date{
+  margin: 10px 30px;
+  font-size: 0.8rem;
+}
+.date-font{
+  color: grey;
+  text-transform: uppercase;
+}
+.title{
+  margin: 10px 30px;
+}
+.big-title-font{
+  color: white;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+}
+.title-font{
+  color: black;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+.circle{
+  position: absolute;
+  top: 80%;
+  margin-left: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-image: url("http://lorempixel.com/output/people-q-c-640-480-4.jpg");
+  background-size: cover;
+}
+button{
+  width: 100%;
+  height: 50px;
+  border: 10px solid grey;
+  border-radius: 20px;
+}
